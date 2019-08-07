@@ -1,4 +1,5 @@
 #include<iostream>
+#include <chrono>
 using namespace std;
 
 class maxof{
@@ -14,6 +15,7 @@ class maxof{
 	}
 	int  max(){
 		int maxi;
+		auto start = chrono::steady_clock::now();
 		maxi=arr[0]; 
 		for(i=1;i<size;i++){
 			if(maxi<arr[i]){
@@ -21,6 +23,11 @@ class maxof{
 				
 			}
 		}
+		
+	auto end = chrono::steady_clock::now();
+		cout << "Elapsed time in nanoseconds : " 
+		<< chrono::duration_cast<chrono::nanoseconds>(end - start).count()
+		<< " ns" << endl;
 		return maxi;
 	}
 };
