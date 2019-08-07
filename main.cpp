@@ -2,33 +2,33 @@
 using namespace std;
 
 class maxof{
-	
-	int maxi;
-	public: int  max(int a[],int n){
-		int i;
-		for(i=1;i<n;i++){
-			if(maxi<a[i]){
-				maxi=a[i];
+	int arr[100],size,i;
+	public: 
+	void input(){
+		 cout<<"enter the size\n";
+		 cin>>size;
+		 cout<<"enter the elements\n";
+		 for(i=0;i<size;i++){
+		cin>>arr[i];
+	    }
+	}
+	int  max(){
+		int maxi;
+		maxi=arr[0]; 
+		for(i=1;i<size;i++){
+			if(maxi<arr[i]){
+				maxi=arr[i];
 				
 			}
-			
 		}
 		return maxi;
-	  
 	}
-	
-	
 };
 int main(){
 	maxof m;
-	int arr[100],n,maximum,i;
-	cout<<"enter the size of array";
-	cin>>n;
-	cout<<"enter the elements ";
-	for(i=0;i<n;i++){
-		cin>>arr[i];
-	}
-	maximum=m.max(arr,n);
-	cout<<"maximum is "<<maximum;
-	
+	int maximum;
+	m.input();
+	maximum=m.max();
+	cout<<"largest is "<<maximum;
 }
+
