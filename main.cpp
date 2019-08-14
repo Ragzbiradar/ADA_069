@@ -1,41 +1,37 @@
 #include<iostream>
-#include <chrono>
 using namespace std;
-
-class maxof{
-	int arr[100],size,i;
-	public: 
-	void input(){
-		 cout<<"enter the size\n";
-		 cin>>size;
-		 cout<<"enter the elements\n";
-		 for(i=0;i<size;i++){
-		cin>>arr[i];
-	    }
+class sqrtsearch{
+	int s=0,e,mid,n,sqrt;
+	public:
+	sqrtsearch(int a){
+		n=a;
+		e=n;
 	}
-	int  max(){
-		int maxi;
-		auto start = chrono::steady_clock::now();
-		maxi=arr[0]; 
-		for(i=1;i<size;i++){
-			if(maxi<arr[i]){
-				maxi=arr[i];
-				
+	int square(){
+		while(s<=e){
+			mid=(s+e)/2;
+			int sqr=mid*mid;
+			if(sqr==n){
+				sqrt=mid;
+				break;
+			}
+			else if (sqr<n){
+				s=mid+1;
+				sqrt=mid;
+			}
+			else if (sqr>n){
+				e=mid-1;
 			}
 		}
-		
-	auto end = chrono::steady_clock::now();
-		cout << "Elapsed time in nanoseconds : " 
-		<< chrono::duration_cast<chrono::nanoseconds>(end - start).count()
-		<< " ns" << endl;
-		return maxi;
+		return sqrt;
 	}
 };
 int main(){
-	maxof m;
-	int maximum;
-	m.input();
-	maximum=m.max();
-	cout<<"largest is "<<maximum;
+	int number,root;
+	cout<<"enter the number";
+	cin>>number;
+	sqrtsearch s(number);
+	root=s.square();
+	cout<<"root is "<<root;
+	return 0;
 }
-
