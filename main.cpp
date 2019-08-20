@@ -34,4 +34,5 @@ int main(){
 	root=s.square();
 	cout<<"root is "<<root;
 	return 0;
+	
 }
