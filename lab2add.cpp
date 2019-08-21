@@ -63,4 +63,5 @@ int main(){
     rs.input();
     rs.bnrysearch();
     return  0;
+    
 }
