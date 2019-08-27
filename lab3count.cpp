@@ -17,7 +17,7 @@ using namespace std;
             for(int i=0;i<n;i++){
                 c[i]=arr[i];
             }
-            cout<<"********before";
+            
         int i,j,temp;
         for( i=0;i<=n-2;i++){
             int min=i;
@@ -30,7 +30,7 @@ using namespace std;
             temp=c[i];
                 c[i]=c[min];
                 c[min]=temp;
-                cout<<"after\n";
+                
         }
         cout<<"the number of comparisons in selection sort="<<counts<<"\n";
 }
