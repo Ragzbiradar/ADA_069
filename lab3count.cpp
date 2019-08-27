@@ -1,7 +1,5 @@
 #include<iostream>
 using namespace std;
-class sort1{
-    public:
     int arr[100],c[100],low,high,n;
     void input(){
     cout<<"enter the size of array";
@@ -13,11 +11,9 @@ class sort1{
     low=0;
     high=n;
     }
-};
-class selesort :public sort1{
-    int c[],counts=0;
-    public:
-        void selesort1(){
+
+        void selesort1(int arr[],int n){
+            int c[100],counts=0;
             for(int i=0;i<n;i++){
                 c[i]=arr[i];
             }
@@ -38,11 +34,8 @@ class selesort :public sort1{
         }
         cout<<"the number of comparisons in selection sort="<<counts<<"\n";
 }
-};
-class bblsort :public sort1{
-    int c[],counts=0;
-    public:
-void bblsort1(){
+void bblsort1(int arr[],int n){
+    int c[100],counts=0;
      for(int i=0;i<n;i++){
                 c[i]=arr[i];}
         int i,j,temp;
@@ -58,10 +51,8 @@ void bblsort1(){
         }
         cout<<"number of comparisons in bubble sort "<<counts<<"\n";
         }
-};
-class mergesort  :public sort1{
-    int cc[],counts=0;
-      int combine(int a[],int low,int mid,int high){
+void combine(int a[],int low,int mid,int high){
+          int cc[100],counts=0;
            for(int i=0;i<n;i++){
                 cc[i]=a[i];}
      int c[100];
@@ -89,25 +80,21 @@ class mergesort  :public sort1{
      for(int t=0;t<=high;t++){
         a[t]=c[t];
      }
-     return counts;
+     cout<<"in merge sort "<< counts<<"\n";
      }
-public:     void split(int a[],int low,int high){
+   void split(int a[],int low,int high){
     if(low<high){
      int  mid=((low+high)/2);
      split(a,low,mid);
      split(a,mid+1,high);
-    int counts= combine(a,low,mid,high);
+    combine(a,low,mid,high);
      }
-     cout<<"number of comparisons in bubble sort "<<counts<<"\n";}
-};
+     }
+
 int main(){
-    sort1 s1;
-    selesort ss;
-    bblsort bs;
-    mergesort ms;
-    s1.input();
-    //ss.selesort1();
-    //bs.bblsort1();
-    ms.split(s1.arr,s1.low,s1.high);
+    input();
+    selesort1(arr,n);
+    bblsort1(arr,n);
+    split(arr,low,high);
     return  0;
 }
