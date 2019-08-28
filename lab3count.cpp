@@ -23,9 +23,10 @@ using namespace std;
         for( i=0;i<=n-2;i++){
             int min=i;
             for(j=i+1;j<=n-1;j++){
+                counts++;
                 if(c[j]<c[min]){
                     min=j;
-                    counts++;
+                    
                 }
                 }
             temp=c[i];
@@ -42,26 +43,26 @@ void bblsort1(int arr[],int n){
         int i,j,temp;
         for(i=0;i<=n-2;i++){
             for(j=0;j<=n-2-i;j++){
+                counts++;
                 if(c[j+1]<c[j]){
                     temp=c[j];
                     c[j]=c[j+1];
                     c[j+1]=temp;
-                    counts++;
+                    
                 }
             }
         }
         cout<<"number of comparisons in bubble sort "<<counts<<"\n";
         }
-void combine(int a[],int low,int mid,int high){
-          int cc[100];
-           for(int i=0;i<n;i++){
-                cc[i]=a[i];}
+void combine(int cc[],int low,int mid,int high){
+          
      int c[100];
      int i=low,j=mid+1,k=low;
      while(i<=mid && j<=high){
+         count++;
         if(cc[i]<cc[j]){
             c[k++]=cc[i++];
-            count++;
+            
 
         }
         else{
@@ -79,7 +80,7 @@ void combine(int a[],int low,int mid,int high){
         }
      }
      for(int t=0;t<=high;t++){
-        a[t]=c[t];
+        arr[t]=c[t];
      }
      //cout<<"in merge sort "<< count<<"\n";
      }
@@ -97,6 +98,6 @@ int main(){
     selesort1(arr,n);
     bblsort1(arr,n);
     split(arr,low,high);
-    cout<<"in merge sort "<<count;
+    cout<<"in merge sort"<<count;
     return  0;
 }
