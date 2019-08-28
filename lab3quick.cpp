@@ -55,6 +55,6 @@ using namespace std;
 int main(){
 
     input();
-    Qs(arr,0,n);
+    Qs(arr,0,n-1);
     display();
 }
