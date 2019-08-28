@@ -1,6 +1,7 @@
+
 #include<iostream>
 using namespace std;
-    int arr[100],c[100],low,high,n;
+    int arr[100],c[100],low,high,n,count=0;
     void input(){
     cout<<"enter the size of array";
     cin>>n;
@@ -52,7 +53,7 @@ void bblsort1(int arr[],int n){
         cout<<"number of comparisons in bubble sort "<<counts<<"\n";
         }
 void combine(int a[],int low,int mid,int high){
-          int cc[100],counts=0;
+          int cc[100];
            for(int i=0;i<n;i++){
                 cc[i]=a[i];}
      int c[100];
@@ -60,7 +61,7 @@ void combine(int a[],int low,int mid,int high){
      while(i<=mid && j<=high){
         if(cc[i]<cc[j]){
             c[k++]=cc[i++];
-            counts++;
+            count++;
 
         }
         else{
@@ -80,7 +81,7 @@ void combine(int a[],int low,int mid,int high){
      for(int t=0;t<=high;t++){
         a[t]=c[t];
      }
-     cout<<"in merge sort "<< counts<<"\n";
+     //cout<<"in merge sort "<< count<<"\n";
      }
    void split(int a[],int low,int high){
     if(low<high){
@@ -96,5 +97,6 @@ int main(){
     selesort1(arr,n);
     bblsort1(arr,n);
     split(arr,low,high);
+    cout<<"in merge sort "<<count;
     return  0;
 }
