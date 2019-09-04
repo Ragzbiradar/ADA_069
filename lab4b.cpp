@@ -1,15 +1,15 @@
 #include<iostream>
-#define n1 3
-#define n2 5
+#define ROW 50
+#define COL 50
 using namespace std;
-    int M[n1][n2];
-    bool visited[n1][n2];
+    int M[ROW][COL],n1,n2;
+    bool visited[ROW][COL];
 
         void input(){
-        //cout<<"enter the no. of rows \n";
-        //cin>>n1;
-        //cout<<"columns:";
-        //cin>>n2;
+        cout<<"enter the no. of rows \n";
+        cin>>n1;
+        cout<<"columns:";
+        cin>>n2;
         for (int i=0;i<n1;i++){
             for(int j=0;j<n2;j++){
             visited[i][j]=false;
@@ -21,10 +21,10 @@ using namespace std;
                 cin>>M[i][j];
             }}
        }
-       int isSafe(int M[][n2],int row,int col,bool visited[][n2]){
+       int isSafe(int M[][COL],int row,int col,bool visited[][COL]){
            return ((row>=0)&&(row<n1)&&(col>=0)&&(col<n2)&&(M[row][col]&& !visited[row][col]));
        }
-       void DFS(int M[][n2],int row,int col,bool visited[][n2]){
+       void DFS(int M[][COL],int row,int col,bool visited[][COL]){
            static int rowNbr[]={-1,-1,-1,0,0,1,1,1};
            static int colNbr[]={-1,0,1,-1,1,-1,0,1};
            visited[row][col]=true;
@@ -34,7 +34,7 @@ using namespace std;
             }
            }
        }
-       int countIslands(int M[][n2]){
+       int countIslands(int M[][COL]){
            int count=0;
            for(int i=0;i<n1;++i){
             for(int j=0;j<n2;++j){
@@ -56,4 +56,3 @@ int n=countIslands(M);
 cout<<n<<" islands are present";
 return 0;
 }
-
