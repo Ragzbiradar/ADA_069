@@ -39,7 +39,5 @@ int main(){
     if(!flag){
         cout<<"No solution";
     }
-
-
 }
 
