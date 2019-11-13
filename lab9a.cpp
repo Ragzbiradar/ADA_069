@@ -71,3 +71,23 @@ cin>>A;
     
   return 0;
 }
+/*
+enter no.of denominations=3
+enter the denominations
+1
+2
+5
+enter the amount6
+
+C[p]
+    0    1    1    2    2    1    2
+
+S[p]
+    0    1    2    1    2    3    1
+
+Min. no. of coins coin required to make change for amount 6 = 2
+
+Coin Set
+Use coin of denomination: 1
+Use coin of denomination: 5
+*/
