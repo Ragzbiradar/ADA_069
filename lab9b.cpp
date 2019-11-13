@@ -57,4 +57,5 @@ enter cost matrix9999 3 4 1
 1-->4=1
 2-->3=2
 1-->2=3
+mincost=6
 */
