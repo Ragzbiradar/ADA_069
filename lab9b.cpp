@@ -47,3 +47,14 @@ int main(){
    prims(n);
    return 0;
 }
+/*
+enter no. of vertices4
+
+enter cost matrix9999 3 4 1
+3 9999 2 9999
+4 2 9999 9999
+1 9999 9999 9999
+1-->4=1
+2-->3=2
+1-->2=3
+*/
